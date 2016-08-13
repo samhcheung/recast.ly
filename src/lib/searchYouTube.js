@@ -3,7 +3,7 @@ var searchYouTube = (options, callback) => {
   // console.log(options);
   var option = {
     key: options.key || window.YOUTUBE_API_KEY,
-    query: options.query,
+    query: options.query || "",
     max: options.max || 5,
   };
 

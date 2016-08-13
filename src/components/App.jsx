@@ -1,22 +1,33 @@
 class App extends React.Component {
   constructor(props) {
     //console.log(props);
-    super(props);
-    this.state = {
-      currentvideo: window.exampleVideoData[0],
-      videos: window.exampleVideoData
-    };
+    if(props) {
+      super(props);
+      this.state = {
+        currentvideo: window.fakeVideoData[0],
+        videos: window.fakeVideoData,
+        search: ""
+      };
+    } else {
+      super(props);
+    }
     // this.props.data({query:'hello'}, function(data) {
     //   console.log(data);
     //   this.setState({videos:data, currentvideo:data[0]});
     // }.bind(this));
   }
-
+  // getInitialState () {
+  //   this.props.data({}, function(data) {
+  //     //console.log(data);
+  //     console.log(data);
+  //     return {videos: "", currentvideo: []};
+  //   }.bind(this));
+  // }
   componentDidMount () {
-    this.props.data({query:'hello'}, function(data) {
+    this.props.data ? this.props.data({query:'hello'}, function(data) {
       //console.log(data);
-      this.setState({videos:data, currentvideo:data[0]});
-    }.bind(this));
+      this.setState({videos:data, currentvideo:data[0], search: ""});
+    }.bind(this)): "";
   }
   clickHandler(item) {
     // console.log(item);
@@ -26,9 +37,10 @@ class App extends React.Component {
     // console.log(this.state);
   }
   changeHandler(query) {
-    this.props.data({query: query}, function(data) {
+    console.log('got here?', query);
+    this.props.data ? this.props.data({query: query}, function(data) {
       this.setState({videos: data});
-    }.bind(this));
+    }.bind(this)) : '';
   }
 
 
@@ -38,7 +50,7 @@ class App extends React.Component {
 
     return (
     <div>
-      <Nav changeevent= {this.changeHandler.bind(this)}/>
+      <Nav changeevent= {this.changeHandler.bind(this)} search = {this.state.search}/>
       <div className="col-md-7">
         <VideoPlayer video= {this.state.currentvideo}/>
       </div>

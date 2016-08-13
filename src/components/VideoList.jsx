@@ -1,9 +1,9 @@
 var VideoList = (props) => { 
-
+ 
   return (
     <div className="video-list media">
     {props.videos.map( function (elem) {
-      return <VideoListEntry clickevent = {props.clickevent.bind(this)} video={elem}/>;
+      return <VideoListEntry   clickevent = { props.clickevent ? props.clickevent : ''} video={elem}/>;
     })
   }
   </div>
