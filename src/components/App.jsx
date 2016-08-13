@@ -1,13 +1,20 @@
 class App extends React.Component {
   constructor(props) {
-    console.log(props);
+    //console.log(props);
     super(props);
     this.state = {
       currentvideo: window.exampleVideoData[0],
       videos: window.exampleVideoData
     };
+    // this.props.data({query:'hello'}, function(data) {
+    //   console.log(data);
+    //   this.setState({videos:data, currentvideo:data[0]});
+    // }.bind(this));
+  }
+
+  componentDidMount () {
     this.props.data({query:'hello'}, function(data) {
-      console.log(data);
+      //console.log(data);
       this.setState({videos:data, currentvideo:data[0]});
     }.bind(this));
   }
@@ -18,6 +25,10 @@ class App extends React.Component {
     // this.forceUpdate();
     // console.log(this.state);
   }
+  changeHandler(query) {
+    console.log('in change handler', query);
+
+  }
 
 
 
@@ -26,7 +37,7 @@ class App extends React.Component {
 
     return (
     <div>
-      <Nav />
+      <Nav changeevent= {this.changeHandler}/>
       <div className="col-md-7">
         <VideoPlayer video= {this.state.currentvideo}/>
       </div>

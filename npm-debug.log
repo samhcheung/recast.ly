@@ -1,0 +1,107 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   'pomander' ]
+2 info using npm@2.15.8
+3 info using node@v4.4.7
+4 verbose install initial load of /Users/kunalrathi/Documents/hackreactor/2016-07-recast.ly/package.json
+5 verbose installManyTop reading scoped package data from /Users/kunalrathi/Documents/hackreactor/2016-07-recast.ly/node_modules/babel-cli/package.json
+6 verbose installManyTop reading scoped package data from /Users/kunalrathi/Documents/hackreactor/2016-07-recast.ly/node_modules/babel-preset-es2015/package.json
+7 verbose installManyTop reading scoped package data from /Users/kunalrathi/Documents/hackreactor/2016-07-recast.ly/node_modules/babel-preset-react/package.json
+8 verbose installManyTop reading scoped package data from /Users/kunalrathi/Documents/hackreactor/2016-07-recast.ly/node_modules/bootstrap/package.json
+9 verbose installManyTop reading scoped package data from /Users/kunalrathi/Documents/hackreactor/2016-07-recast.ly/node_modules/chai/package.json
+10 verbose installManyTop reading scoped package data from /Users/kunalrathi/Documents/hackreactor/2016-07-recast.ly/node_modules/jquery/package.json
+11 verbose installManyTop reading scoped package data from /Users/kunalrathi/Documents/hackreactor/2016-07-recast.ly/node_modules/live-server/package.json
+12 verbose installManyTop reading scoped package data from /Users/kunalrathi/Documents/hackreactor/2016-07-recast.ly/node_modules/lodash/package.json
+13 verbose installManyTop reading scoped package data from /Users/kunalrathi/Documents/hackreactor/2016-07-recast.ly/node_modules/mocha/package.json
+14 verbose installManyTop reading scoped package data from /Users/kunalrathi/Documents/hackreactor/2016-07-recast.ly/node_modules/react/package.json
+15 verbose installManyTop reading scoped package data from /Users/kunalrathi/Documents/hackreactor/2016-07-recast.ly/node_modules/react-dom/package.json
+16 verbose installManyTop reading scoped package data from /Users/kunalrathi/Documents/hackreactor/2016-07-recast.ly/node_modules/sinon/package.json
+17 info package.json sinon@1.17.5 No README data
+18 verbose readDependencies loading dependencies from /Users/kunalrathi/Documents/hackreactor/2016-07-recast.ly/package.json
+19 silly cache add args [ 'pomander', null ]
+20 verbose cache add spec pomander
+21 silly cache add parsed spec Result {
+21 silly cache add   raw: 'pomander',
+21 silly cache add   scope: null,
+21 silly cache add   name: 'pomander',
+21 silly cache add   rawSpec: '',
+21 silly cache add   spec: 'latest',
+21 silly cache add   type: 'tag' }
+22 silly addNamed pomander@latest
+23 verbose addNamed "latest" is being treated as a dist-tag for pomander
+24 info addNameTag [ 'pomander', 'latest' ]
+25 silly mapToRegistry name pomander
+26 silly mapToRegistry using default registry
+27 silly mapToRegistry registry https://registry.npmjs.org/
+28 silly mapToRegistry data Result {
+28 silly mapToRegistry   raw: 'pomander',
+28 silly mapToRegistry   scope: null,
+28 silly mapToRegistry   name: 'pomander',
+28 silly mapToRegistry   rawSpec: '',
+28 silly mapToRegistry   spec: 'latest',
+28 silly mapToRegistry   type: 'tag' }
+29 silly mapToRegistry uri https://registry.npmjs.org/pomander
+30 verbose addNameTag registry:https://registry.npmjs.org/pomander not in flight; fetching
+31 verbose request uri https://registry.npmjs.org/pomander
+32 verbose request no auth needed
+33 info attempt registry request try #1 at 7:24:57 PM
+34 verbose request id 6bfc1c6742c65234
+35 http request GET https://registry.npmjs.org/pomander
+36 http 404 https://registry.npmjs.org/pomander
+37 verbose headers { 'content-type': 'application/json',
+37 verbose headers   'cache-control': 'max-age=0',
+37 verbose headers   'content-length': '2',
+37 verbose headers   'accept-ranges': 'bytes',
+37 verbose headers   date: 'Sat, 13 Aug 2016 02:25:03 GMT',
+37 verbose headers   via: '1.1 varnish',
+37 verbose headers   age: '0',
+37 verbose headers   connection: 'keep-alive',
+37 verbose headers   'x-served-by': 'cache-sea1921-SEA',
+37 verbose headers   'x-cache': 'MISS',
+37 verbose headers   'x-cache-hits': '0',
+37 verbose headers   'x-timer': 'S1471055103.163304,VS0,VE175',
+37 verbose headers   vary: 'Accept-Encoding' }
+38 silly get cb [ 404,
+38 silly get   { 'content-type': 'application/json',
+38 silly get     'cache-control': 'max-age=0',
+38 silly get     'content-length': '2',
+38 silly get     'accept-ranges': 'bytes',
+38 silly get     date: 'Sat, 13 Aug 2016 02:25:03 GMT',
+38 silly get     via: '1.1 varnish',
+38 silly get     age: '0',
+38 silly get     connection: 'keep-alive',
+38 silly get     'x-served-by': 'cache-sea1921-SEA',
+38 silly get     'x-cache': 'MISS',
+38 silly get     'x-cache-hits': '0',
+38 silly get     'x-timer': 'S1471055103.163304,VS0,VE175',
+38 silly get     vary: 'Accept-Encoding' } ]
+39 verbose stack Error: Registry returned 404 for GET on https://registry.npmjs.org/pomander
+39 verbose stack     at makeError (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:264:12)
+39 verbose stack     at CachingRegistryClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:242:14)
+39 verbose stack     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:172:14)
+39 verbose stack     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:200:22)
+39 verbose stack     at emitTwo (events.js:87:13)
+39 verbose stack     at Request.emit (events.js:172:7)
+39 verbose stack     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1067:10)
+39 verbose stack     at emitOne (events.js:82:20)
+39 verbose stack     at Request.emit (events.js:169:7)
+39 verbose stack     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:988:12)
+40 verbose statusCode 404
+41 verbose pkgid pomander
+42 verbose cwd /Users/kunalrathi/Documents/hackreactor/2016-07-recast.ly
+43 error Darwin 15.5.0
+44 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "install" "pomander"
+45 error node v4.4.7
+46 error npm  v2.15.8
+47 error code E404
+48 error 404 Registry returned 404 for GET on https://registry.npmjs.org/pomander
+48 error 404
+48 error 404 'pomander' is not in the npm registry.
+48 error 404 You should bug the author to publish it (or use the name yourself!)
+48 error 404 It was specified as a dependency of 'recast.ly'
+48 error 404
+48 error 404 Note that you can also install from a
+48 error 404 tarball, folder, http url, or git url.
+49 verbose exit [ 1, true ]
