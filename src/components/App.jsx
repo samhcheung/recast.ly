@@ -26,8 +26,9 @@ class App extends React.Component {
     // console.log(this.state);
   }
   changeHandler(query) {
-    console.log('in change handler', query);
-
+    this.props.data({query: query}, function(data) {
+      this.setState({videos: data});
+    }.bind(this));
   }
 
 
@@ -37,7 +38,7 @@ class App extends React.Component {
 
     return (
     <div>
-      <Nav changeevent= {this.changeHandler}/>
+      <Nav changeevent= {this.changeHandler.bind(this)}/>
       <div className="col-md-7">
         <VideoPlayer video= {this.state.currentvideo}/>
       </div>
