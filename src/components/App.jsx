@@ -1,38 +1,48 @@
 class App extends React.Component {
   constructor(props) {
     //console.log(props);
-    if(props) {
-      super(props);
-      this.state = {
-        currentvideo: window.fakeVideoData[0],
-        videos: window.fakeVideoData,
-        search: ""
-      };
-    } else {
-      super(props);
+
+    super(props);
+    var video, videos;
+
+    this.state = {
+      videos: [], 
+      currentvideo: '',
+      search: '',
+      description: ''
     }
+  }
+
+
     // this.props.data({query:'hello'}, function(data) {
     //   console.log(data);
     //   this.setState({videos:data, currentvideo:data[0]});
     // }.bind(this));
-  }
-  // getInitialState () {
+  // getDefaultProps () {
   //   this.props.data({}, function(data) {
-  //     //console.log(data);
-  //     console.log(data);
-  //     return {videos: "", currentvideo: []};
+  //     // //console.log(data);
+  //     // console.log(data);
+  //     return {videos: [], currentvideo: ""};
   //   }.bind(this));
   // }
-  componentDidMount () {
-    this.props.data ? this.props.data({query:'hello'}, function(data) {
-      //console.log(data);
-      this.setState({videos:data, currentvideo:data[0], search: ""});
-    }.bind(this)): "";
-  }
+
+  // componentWillMount () {
+  //   this.props.data ? this.props.data({query:'hello'}, function(data) {
+  //     //console.log(data);
+  //     this.setState({videos:data, currentvideo:data[0], search: ""});
+  //   }.bind(this)): "";
+  // }
   clickHandler(item) {
     // console.log(item);
     // console.log('this', this);
     this.setState({currentvideo: item.video});
+
+    this.props.desc ? this.props.desc({id: item.video.id.videoId}, function(data) {
+
+      this.setState( {description : data.items[0].snippet.description});
+      console.log(this.state.description);
+      // this.setState({videoDescription: description});
+    }.bind(this)) : '';
     // this.forceUpdate();
     // console.log(this.state);
   }
@@ -50,12 +60,12 @@ class App extends React.Component {
 
     return (
     <div>
-      <Nav changeevent= {this.changeHandler.bind(this)} search = {this.state.search}/>
+      <Nav changeevent= {this.changeHandler.bind(this)} search = { this.state ? this.state.search : '' }/>
       <div className="col-md-7">
-        <VideoPlayer video= {this.state.currentvideo}/>
+        <VideoPlayer video= {this.state ? this.state.currentvideo : ''} desc = {this.state ? this.state.description : ''}/>
       </div>
       <div className="col-md-5">
-        <VideoList clickevent = {this.clickHandler.bind(this)} videos = {this.state.videos}/>
+        <VideoList clickevent = {this.clickHandler.bind(this)} videos = {this.state ? this.state.videos : []}/>
       </div>
     </div>
     );
